@@ -1,0 +1,56 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<nav style="background-color:tan;opacity:0.5" class="navbar navbar-inverse  navbar-collapse" id="head-navbar">
+    <ul class="nav navbar-nav pull-left">
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button" routerLink="/idea">Add
+                    Idea </button></a>
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button" routerLink="/userprofile">Profile</button></a>
+
+    </ul>
+
+    <ul class="nav navbar-nav pull-right" *ngIf="userDetails">
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button"
+                    (click)="onLogout()" value="Logout">Logout</button></a>
+
+    </ul>
+</nav>
+
+
+
+
+<!-- code -->
+
+<!-- <!DOCTYPE html> -->
+<html>
+
+   <head>
+      <title>File Upload Box</title>
+   </head>
+   <form action="/html/tags/html_form_tag_action.cfm" method="post"  style="font-size: 300%">
+    <form>
+            <div class="radio" style="color:#6baf33">
+              <label><input type="radio" name="optradio"> Business </label>
+            </div>
+            <div class="radio"style="color:#6baf33">
+              <label><input type="radio" name="optradio">Educational</label>
+            </div>
+            <div class="radio" style="color:#6baf33">
+              <label><input type="radio" name="optradio">Entertainment</label>
+            </div>
+            <div class="radio" style="color:#6baf33">
+                    <label><input type="radio" name="optradio">Other</label>
+                  </div>
+          </form>
+    <textarea name="comments" id="comments" style="width:92%;padding:2%;height:150px;font:36px/44px cursive;border:10px double yellowgreen;" placeholder="Describe yourself here...">
+    
+    </textarea><br>
+    <input type="submit" value="Submit">
+    </form>
+   
+	
+</html>

@@ -1,0 +1,17 @@
+<nav style="background-color:tan;opacity:0.5" class="navbar navbar-inverse  navbar-collapse" id="head-navbar">
+    <ul class="nav navbar-nav pull-left">
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button" routerLink="/idea">Add
+                    Idea </button></a>
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button">Profile</button></a>
+
+    </ul>
+
+    <ul class="nav navbar-nav pull-right" *ngIf="userDetails">
+        <li><a style="color:black;font-size:15pt"><button
+                    style="background-color: transparent;padding:7px;border-radius:7px" type="button"
+                    (click)="onLogout()" value="Logout">Logout</button></a>
+
+    </ul>
+</nav>

@@ -1,0 +1,182 @@
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<div>
+    <nav style="background-color:tan;opacity:0.5" class="navbar navbar-inverse  navbar-collapse" id="head-navbar">
+        <ul class="nav navbar-nav pull-left">
+            <li><a style="color:black;font-size:15pt"><button
+                        style="background-color: transparent;padding:7px;border-radius:7px" type="button" routerLink="/idea">Add
+                        Idea </button></a>
+            <li><a style="color:black;font-size:15pt"><button
+                        style="background-color: transparent;padding:7px;border-radius:7px" type="button">Profile</button></a>
+
+        </ul>
+
+        <ul class="nav navbar-nav pull-right" *ngIf="userDetails">
+            <li><a style="color:black;font-size:15pt"><button
+                        style="background-color: transparent;padding:7px;border-radius:7px" type="button"
+                        (click)="onLogout()" value="Logout">Logout</button></a>
+
+        </ul>
+    </nav>
+
+
+
+    <div class="container bootstrap snippets">
+        <div class="row">
+            <div class="col-md-12" style="text-align:center;">
+                <form class="form-horizontal" style="color:rgb(207, 224, 51);" *ngIf="userDetails">
+                    <div class="panel panel-default">
+                        <div class="panel-body text-center">
+                            <img src="https://bootdey.com/img/Content/avatar/avatar6.png"
+                                class="img-circle profile-avatar" alt="User avatar">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-sm-10 col-sm-offset-2">
+                            <button type="submit" class="btn btn-primary">View</button>
+                            <button type="reset" class="btn btn-default">Edit</button>
+                        </div>
+                    </div>
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">User info</h4>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">First name</label>
+                            <div class="col-sm-10">
+                                <!-- <input type="text" class="form-control" style="font-size: 12pt; height: 40px; width:280px;" > -->
+                                <textarea rows="1" class="form-control">{{userDetails.firstName}}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-2 control-label">Last name</label>
+                            <div class="col-sm-10">
+                                <!-- <input type="text" class="form-control" style="font-size: 12pt; height: 40px; width:280px;" > -->
+                                <textarea rows="1" class="form-control">{{userDetails.lastName}}</textarea>
+                            </div>
+                        </div>
+
+
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Location</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control">
+                                        <option selected="">Select country</option>
+                                        <option>Sri Lanka</option>
+                                        <option>India</option>
+                                        <option>Uk</option>
+                                        <option>us</option>
+                                        <option>Denmark</option>
+                                        <option>Estonia</option>
+                                        <option>France</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Company name</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                        style="font-size: 12pt; height: 40px; width:280px;">
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Position</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control"
+                                        style="font-size: 12pt; height: 40px; width:280px;">
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">Contact info</h4>
+                        </div>
+                        <div class="panel-body">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Work number</label>
+                                <div class="col-sm-10">
+                                    <input type="tel" class="form-control">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Mobile number</label>
+                                <div class="col-sm-10">
+                                    <!-- <input type="tel" class="form-control"> -->
+                                    <textarea rows="1" class="form-control">{{userDetails.contactnumber}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">E-mail address</label>
+                                <div class="col-sm-10">
+                                    <!-- <input type="email" class="form-control" > -->
+                                    <textarea rows="1" class="form-control">{{userDetails.email}}</textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label">Work address</label>
+                                <div class="col-sm-10">
+                                    <textarea rows="3" class="form-control"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </form>
+                <form>
+
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- <table *ngIf="userDetails" class="table-fill">
+    <thead>
+        <tr>
+            <th colspan="2" class="text-center">User Profile</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>First Name</td>
+            <td>{{userDetails.firstName}}</td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>{{userDetails.lastName}}</td>
+        </tr>
+        <tr>
+            <td>Contact Number</td>
+            <td>{{userDetails.contactnumber}}</td>
+        </tr>
+        <tr>
+            <td>Email</td>
+            <td>{{userDetails.email}}</td>
+        </tr>
+        <tr>
+            <td colspan="2" class="text-center">
+                <input type="button" (click)="onLogout()" value="Logout" />
+            </td>
+        </tr> 
+    </tbody>
+  </table>  -->
